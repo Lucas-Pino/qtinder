@@ -28,10 +28,11 @@ signals:
    void changeMajor(const QString &);
    void changeLikes(const QString &);
    void changeDislikes(const QString &);
+   void changeView(int index);
 
 //CAMBIO DE PERFIL
 
-
+//CAMBIO DE VISTA
 
 public slots:
 
@@ -47,7 +48,10 @@ public slots:
     void reject();
     void approve();
 
-
+//CAMBIO DE VISTA
+    void messagesButton();
+    void profileButton();
+    void backButton();
 
 private:
     Ui::Widget *ui;
