@@ -53,6 +53,10 @@ void Widget::reject(){
 
 }
 
+void Widget::approve(){
+
+}
+
 
 Widget::~Widget()
 {

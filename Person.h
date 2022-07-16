@@ -2,8 +2,8 @@
 // Created by Lucas Pino on 12-07-22.
 //
 
-#ifndef USM_MATCH_PERSON_H
-#define USM_MATCH_PERSON_H
+#ifndef QTINDER_PERSON_H
+#define QTINDER_PERSON_H
 
 #include <string>
 #include <vector>
@@ -115,4 +115,4 @@ public:
 };
 
 
-#endif //USM_MATCH_PERSON_H
+#endif //QTINDER_PERSON_H
