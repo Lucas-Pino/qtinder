@@ -1,3 +1,9 @@
 <RCC>
-    <qresource prefix="/main"/>
+    <qresource prefix="/female">
+        <file>profilePics/1.jpg</file>
+        <file>profilePics/2.jpg</file>
+        <file>profilePics/3.jpg</file>
+        <file>profilePics/4.jpg</file>
+        <file>profilePics/44.jpg</file>
+    </qresource>
 </RCC>

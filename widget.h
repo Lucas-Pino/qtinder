@@ -4,6 +4,9 @@
 #include <QWidget>
 #include<QDir>
 
+#include "Person.h"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -17,18 +20,32 @@ public:
     ~Widget();
 
 signals:
-   void changeImage(const QPixmap &);
 
-//CAMBIO DEL PERFIL
-   void changeName();
-   void changeAge();
-   void changeMajor();
-   void changeLikes();
+//CAMBIO DE ATRIBUTOS
+   void changeImage(const QPixmap &);
+   void changeName(const QString &);
+   void changeAge(const QString &);
+   void changeMajor(const QString &);
+   void changeLikes(const QString &);
+   void changeDislikes(const QString &);
+
+//CAMBIO DE PERFIL
 
 
 
 public slots:
+
+//CAMBIO DE ATRIBUTOS
     void buttonHandler();
+    void nameSlot();
+    void ageSlot();
+    void majorSlot();
+    void likesSlot();
+    void dislikesSlot();
+
+//CAMBIO DE PERFIL
+    void reject();
+    void approve();
 
 
 

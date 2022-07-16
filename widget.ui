@@ -194,7 +194,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Kennia,</string>
+       <string>hello</string>
       </property>
      </widget>
     </item>
@@ -345,6 +345,27 @@
    </property>
    <property name="text">
     <string>OOP, blue, cats.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>490</y>
+     <width>105</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+     <pointsize>45</pointsize>
+     <italic>false</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>
