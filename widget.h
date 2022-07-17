@@ -21,22 +21,30 @@ public:
 
 signals:
 
-//CAMBIO DE ATRIBUTOS
-   void changeImage(const QPixmap &);
-   void changeName(const QString &);
-   void changeAge(const QString &);
-   void changeMajor(const QString &);
-   void changeLikes(const QString &);
-   void changeDislikes(const QString &);
-   void changeView(int index);
 
-//CAMBIO DE PERFIL
+    //CAMBIO DE ATRIBUTOS
+    void changeImage(const QPixmap &);
+    void changeName(const QString &);
+    void changeAge(const QString &);
+    void changeMajor(const QString &);
+    void changeLikes(const QString &);
+    void changeDislikes(const QString &);
+    void changeView(int index);
+    //CAMBIO DE PERFIL
 
-//CAMBIO DE VISTA
+    //CAMBIO DE VISTA
+
 
 public slots:
 
-//CAMBIO DE ATRIBUTOS
+//LANDING PAGE
+   void createProfileButton();
+   void settingsButton();
+//FORMULARIO PAGE
+
+
+//SWIPING PAGE
+    //CAMBIO DE ATRIBUTOS
     void buttonHandler();
     void nameSlot();
     void ageSlot();
@@ -44,14 +52,16 @@ public slots:
     void likesSlot();
     void dislikesSlot();
 
-//CAMBIO DE PERFIL
+    //CAMBIO DE PERFIL
     void reject();
     void approve();
 
-//CAMBIO DE VISTA
+    //CAMBIO DE VISTA
     void messagesButton();
     void profileButton();
     void backButton();
+
+//MESSAGES PAGE
 
 private:
     Ui::Widget *ui;

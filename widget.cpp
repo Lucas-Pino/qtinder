@@ -9,13 +9,18 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     //connect(ui->pushButton_2,&QPushButton::released(),this,&Widget::HandleButton);
 
-//BOTONES LIKE NEXT
+//LANDING PAGE
+    //botones
+    connect(ui->pushButton_8, SIGNAL(pressed()), this, SLOT( createProfileButton()));
+    connect(ui->pushButton_11, SIGNAL(pressed()), this, SLOT( settingsButton()));
+
+    //BOTONES LIKE NEXT
     connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( buttonHandler()));
     connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( nameSlot()));
     connect(this, SIGNAL(changeImage(QPixmap)), ui->label_6, SLOT(setPixmap(QPixmap)));
     connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
 
-//BOTONES CAMBIAR VISTA MENSAJES PERFIL
+    //BOTONES CAMBIAR VISTA MENSAJES PERFIL
     connect(ui->pushButton_9, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
     //connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
     connect(ui->pushButton_6, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
@@ -31,6 +36,9 @@ Person testPerson=Person("lucas","male",20,"ELO");
 //LANDING PAGE
 void Widget::createProfileButton(){
     emit changeView(int(1));
+}
+void Widget::settingsButton(){
+    emit changeView(int(5));
 }
 
 //FORMULARIO PAGE

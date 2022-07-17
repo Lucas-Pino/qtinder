@@ -23,9 +23,9 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
-   <widget class="QWidget" name="page">
+   <widget class="QWidget" name="landing_page">
     <widget class="QLabel" name="label_16">
      <property name="geometry">
       <rect>
@@ -117,7 +117,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_2">
+   <widget class="QWidget" name="form_page">
     <widget class="QSpinBox" name="spinBox_2">
      <property name="geometry">
       <rect>
@@ -749,7 +749,7 @@
     <zorder>plainTextEdit_13</zorder>
     <zorder>label_56</zorder>
    </widget>
-   <widget class="QWidget" name="page_7">
+   <widget class="QWidget" name="yourProfile_page">
     <widget class="QLabel" name="label_63">
      <property name="geometry">
       <rect>
@@ -1263,60 +1263,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="profile_page">
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>20</y>
-       <width>271</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>36</pointsize>
-       <italic>true</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>YOUR PROFILE</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_10">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>20</y>
-       <width>61</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>39</pointsize>
-       <italic>false</italic>
-       <bold>false</bold>
-       <underline>false</underline>
-       <strikeout>false</strikeout>
-       <kerning>true</kerning>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>🔙</string>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </widget>
    <widget class="QWidget" name="messages_page">
     <widget class="QLabel" name="label_14">
      <property name="geometry">
@@ -1368,6 +1314,28 @@
      </property>
      <property name="flat">
       <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="label_69">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>36</pointsize>
+       <italic>true</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>SETTINGS?</string>
      </property>
     </widget>
    </widget>

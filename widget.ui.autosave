@@ -749,7 +749,7 @@
     <zorder>plainTextEdit_13</zorder>
     <zorder>label_56</zorder>
    </widget>
-   <widget class="QWidget" name="page_7">
+   <widget class="QWidget" name="yourProfile_page">
     <widget class="QLabel" name="label_63">
      <property name="geometry">
       <rect>
@@ -1263,7 +1263,6 @@
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="page_8"/>
    <widget class="QWidget" name="messages_page">
     <widget class="QLabel" name="label_14">
      <property name="geometry">
@@ -1315,6 +1314,28 @@
      </property>
      <property name="flat">
       <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="label_69">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>170</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>36</pointsize>
+       <italic>true</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>SETTINGS?</string>
      </property>
     </widget>
    </widget>
