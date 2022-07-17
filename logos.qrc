@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/main">
+        <file>logos/qtinder_whole_logo.jpg</file>
+    </qresource>
+</RCC>

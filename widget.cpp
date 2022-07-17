@@ -17,7 +17,7 @@ Widget::Widget(QWidget *parent)
 
 //BOTONES CAMBIAR VISTA MENSAJES PERFIL
     connect(ui->pushButton_9, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
-    connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
+    //connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
     connect(ui->pushButton_6, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
     connect(ui->pushButton_4, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
    //setCurrentIndex(int index)
@@ -25,15 +25,25 @@ Widget::Widget(QWidget *parent)
 
 }
 
+Person testPerson=Person("lucas","male",20,"ELO");
 
 
+//LANDING PAGE
+void Widget::createProfileButton(){
+    emit changeView(int(1));
+}
+
+//FORMULARIO PAGE
+
+//SWIPING PAGE
 //CAMBIO DE ATRIBUTOS
 void Widget::buttonHandler(){
     emit changeImage(QPixmap(":/female/profilePics/44.jpg"));
 }
 
 void Widget::nameSlot(){
-    std::string str="Dani,";
+    //std::string str="Dani,";
+    std::string str=testPerson.getName();
     const QString qstr = QString::fromStdString(str);
     emit changeName(QString(qstr));
 }

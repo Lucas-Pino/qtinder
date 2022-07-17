@@ -11,16 +11,13 @@ CONFIG += c++17
 SOURCES += \
     Person.cpp \
     main.cpp \
-    profile.cpp \
     widget.cpp
 
 HEADERS += \
     Person.h \
-    profile.h \
     widget.h
 
 FORMS += \
-    profile.ui \
     widget.ui
 
 # Default rules for deployment.
@@ -29,4 +26,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    logos.qrc \
     profilePics.qrc
