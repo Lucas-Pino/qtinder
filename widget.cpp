@@ -9,6 +9,10 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     //connect(ui->pushButton_2,&QPushButton::released(),this,&Widget::HandleButton);
 
+// STACKED WIDGET
+    //setCurrentIndex(int index)
+     connect(this, SIGNAL(changeView(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
+
 //LANDING PAGE /////////////////////////////////////////////////////////////////
     //botones
     connect(ui->pushButton_8, SIGNAL(pressed()), this, SLOT( createProfileButton()));
@@ -53,8 +57,7 @@ Widget::Widget(QWidget *parent)
     //connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
     connect(ui->pushButton_6, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
     connect(ui->pushButton_4, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
-   //setCurrentIndex(int index)
-    connect(this, SIGNAL(changeView(int)), ui->stackedWidget, SLOT(setCurrentIndex(int)));
+
 
 }
 
