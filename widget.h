@@ -2,8 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include<QDir>
-
+#include <QDir>
+#include <QString>
 #include "Person.h"
 
 
@@ -21,7 +21,27 @@ public:
 
 signals:
 
+//PROFILE PAGE
+    // yp = Your Profile
+    void ypNameSignal(const QString &); // yp = Your Profile
+    void ypAgeSignal(const QString &);
+    void ypGenderSignal(const QString &);
+    void ypMajorSignal(const QString &);
 
+    void ypSexPrefSignal(const QString &);
+
+    void ypPicSignal(const QPixmap &);
+
+    void ypLikeSignal_1(const QString &);
+    void ypLikeSignal_2(const QString &);
+    void ypLikeSignal_3(const QString &);
+
+    void ypDislikeSignal_1(const QString &);
+    void ypDislikeSignal_2(const QString &);
+    void ypDislikeSignal_3(const QString &);
+
+
+//SWIPING PAGE
     //CAMBIO DE ATRIBUTOS
     void changeImage(const QPixmap &);
     void changeName(const QString &);
@@ -34,13 +54,25 @@ signals:
 
     //CAMBIO DE VISTA
 
+    //TEST SIGNAL
+    void testSignal(std::string testStr);
 
 public slots:
 
 //LANDING PAGE
-   void createProfileButton();
-   void settingsButton();
+    void createProfileButton();
+    void settingsButton();
+
 //FORMULARIO PAGE
+
+    void minAgeBox(int age);
+
+
+    void finishProfileButton();
+
+//PROFILE PAGE
+    void meetPeopleButton();
+    void profilePicLabel();
 
 
 //SWIPING PAGE

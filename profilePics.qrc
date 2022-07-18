@@ -6,4 +6,10 @@
         <file>profilePics/4.jpg</file>
         <file>profilePics/44.jpg</file>
     </qresource>
+    <qresource prefix="/yourProfile_Male">
+        <file>profilePics/44.jpg</file>
+    </qresource>
+    <qresource prefix="/yourProfileFemale">
+        <file>profilePics/67.jpg</file>
+    </qresource>
 </RCC>
