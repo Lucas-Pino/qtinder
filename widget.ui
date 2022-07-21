@@ -231,7 +231,7 @@ border-radius: 1000px;
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="preferencias">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -645,7 +645,7 @@ border-radius: 1000px;
       </property>
      </widget>
     </widget>
-    <widget class="QFrame" name="frame_2">
+    <widget class="QFrame" name="basic_info">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -933,8 +933,8 @@ border-radius: 1000px;
       </property>
      </widget>
     </widget>
-    <zorder>frame</zorder>
-    <zorder>frame_2</zorder>
+    <zorder>preferencias</zorder>
+    <zorder>basic_info</zorder>
     <zorder>label_53</zorder>
     <zorder>label_54</zorder>
     <zorder>label_55</zorder>
@@ -1328,7 +1328,7 @@ border-radius: 1000px;
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="profilePicLabel">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -1347,7 +1347,7 @@ border-radius: 1000px;
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="dislikesSwipeLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -1368,7 +1368,7 @@ border-radius: 1000px;
       <string>OOP, blue, cats.</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="likesSwipeLabel">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -1389,7 +1389,7 @@ border-radius: 1000px;
       <string>Puppies, Pan, Friends.</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="yesButton">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -1447,28 +1447,7 @@ border-radius: 1000px;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>510</y>
-       <width>105</width>
-       <height>45</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Helvetica</family>
-       <pointsize>45</pointsize>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="messagesButton">
      <property name="geometry">
       <rect>
        <x>450</x>
@@ -1500,7 +1479,7 @@ border-radius: 1000px;
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="noButton">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -1550,7 +1529,7 @@ border-radius: 1000px;
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="nameSwipeLabel">
         <property name="font">
          <font>
           <family>Helvetica</family>
@@ -1565,7 +1544,7 @@ border-radius: 1000px;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="ageSwipeLabel">
         <property name="font">
          <font>
           <family>Helvetica</family>
@@ -1580,7 +1559,7 @@ border-radius: 1000px;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="majorSwipeLabel">
         <property name="font">
          <font>
           <family>Helvetica</family>
@@ -1609,7 +1588,7 @@ border-radius: 1000px;
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="yourProfileButton">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1663,7 +1642,7 @@ border-radius: 1000px;
       <string>MESSAGES</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_9">
+    <widget class="QPushButton" name="backMessages">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -1696,7 +1675,7 @@ border-radius: 1000px;
      </property>
     </widget>
    </widget>
-   <widget class="QWidget" name="page">
+   <widget class="QWidget" name="settingsPage">
     <widget class="QLabel" name="label_69">
      <property name="geometry">
       <rect>

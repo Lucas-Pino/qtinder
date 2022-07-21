@@ -20,7 +20,8 @@ public:
     ~Widget();
 
 signals:
-
+//STACKED WIDGET
+    void changeView(int index);
 //PROFILE PAGE
     // yp = Your Profile
     void ypNameSignal(const QString &); // yp = Your Profile
@@ -49,7 +50,7 @@ signals:
     void changeMajor(const QString &);
     void changeLikes(const QString &);
     void changeDislikes(const QString &);
-    void changeView(int index);
+
     //CAMBIO DE PERFIL
 
     //CAMBIO DE VISTA

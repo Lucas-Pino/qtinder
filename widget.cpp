@@ -47,21 +47,24 @@ Widget::Widget(QWidget *parent)
 
 //SWIPING PAGE //////////////////////////////////////////////////////////////////
     //BOTONES LIKE NEXT
-    connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( buttonHandler()));
-    connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( nameSlot()));
-    connect(this, SIGNAL(changeImage(QPixmap)), ui->label_6, SLOT(setPixmap(QPixmap)));
-    connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
+    //connect(ui->yesButton, SIGNAL(pressed()), this, SLOT( buttonHandler()));
+    //connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( nameSlot()));
+    //connect(this, SIGNAL(changeImage(QPixmap)), ui->label_6, SLOT(setPixmap(QPixmap)));
+    //connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
 
     //BOTONES CAMBIAR VISTA MENSAJES PERFIL
-    connect(ui->pushButton_9, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
+    //connect(ui->pushButton_9, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
     //connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
-    connect(ui->pushButton_6, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
-    connect(ui->pushButton_4, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
+    connect(ui->yourProfileButton, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
+    //connect(ui->pushButton_4, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
 
 
 }
 
+
 Person mainPerson=Person("lucas","male",20,"ELO");
+
+
 
 
 //LANDING PAGE /////////////////////////////////////////////////////////////////
