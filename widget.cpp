@@ -57,10 +57,10 @@ Widget::Widget(QWidget *parent)
     //connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
 
     //BOTONES CAMBIAR VISTA MENSAJES PERFIL
-    //connect(ui->pushButton_9, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
+    connect(ui->backMessages, SIGNAL(pressed()), this, SLOT( backButton())); //back from messages
     //connect(ui->pushButton_10, SIGNAL(pressed()), this, SLOT( backButton())); //back from profile
     connect(ui->yourProfileButton, SIGNAL(pressed()), this, SLOT( profileButton())); //profile
-    //connect(ui->pushButton_4, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
+    connect(ui->messagesButton, SIGNAL(pressed()), this, SLOT( messagesButton())); //messages
 
 
 }
@@ -175,19 +175,19 @@ void Widget::finishProfileButton(){
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
         //emit ypPicSignal(p.scaled(w,h,Qt::KeepAspectRatio));
         //emit ypPicSignal(p.scaled(w,w,Qt::KeepAspectRatio));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/44.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/male/16.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("Femenino"))==0){
         emit ypGenderSignal(QString("♀"));
         //emit ypPicSignal(QPixmap(":/yourProfileFemale/profilePics/67.jpg"));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfileFemale/profilePics/67.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfileFemale/profilePics/female/1.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("No Binario"))==0){
         emit ypGenderSignal(QString("⚧"));
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/44.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/male/18.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     //crear la lista de posibles denuevo
@@ -208,30 +208,32 @@ void Widget::meetPeopleButton(){
     //likes & dislikes
     string comma=",";
     string andy="&";
+    string dash=" - ";
     vector<string> likes = currentProfile.getLikes();
-    string strLikes=likes[0]+comma+likes[1]+comma+likes[2];
+    string strLikes=likes[0]+dash+likes[1]+dash+likes[2];
     ui->likesSwipeLabel->setText(QString::fromStdString(strLikes));
 
     vector<string> dislikes = currentProfile.getDisLikes();
-    string strdisLikes=dislikes[0]+comma+dislikes[1]+comma+dislikes[2];
+    string strdisLikes=dislikes[0]+dash+dislikes[1]+dash+dislikes[2];
     ui->dislikesSwipeLabel->setText(QString::fromStdString(strdisLikes));
 
     //profile pic
     int w = ui->profilePicLabel->width();
-    string basePath=":/female/profilePics/";
+    string basePath=":/female/profilePics/female";
     string extension=".jpg";
     string gender=currentProfile.getGender();
-    string id=to_string(currentProfile.getId());
+    //string id=to_string(currentProfile.getId());
+    string id =to_string(8);
     string fullPath;
 
     if (gender=="Masculino"){
-        basePath=":/male/profilePics/";
+        basePath=":/male/profilePics/male";
     }
     if (gender=="Femenino"){
-        basePath=":/female/profilePics/";
+        basePath=":/female/profilePics/female";
     }
     if (gender=="No Binario"){
-        basePath=":/nb/profilePics/";
+        basePath=":/nb/profilePics/nb";
     }
     fullPath=basePath+id+extension;
 
@@ -264,7 +266,7 @@ void Widget::like(){
 
 //CAMBIO DE VISTA
 void Widget::backButton(){
-    emit changeView(int(0));
+    emit changeView(int(3));
 }
 
 void Widget::profileButton(){
@@ -272,7 +274,7 @@ void Widget::profileButton(){
 }
 
 void Widget::messagesButton(){
-    emit changeView(int(3));
+    emit changeView(int(4));
 }
 
 
