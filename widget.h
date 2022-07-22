@@ -5,6 +5,8 @@
 #include <QDir>
 #include <QString>
 #include "Person.h"
+#include "ProfileCreator.h"
+#include "MatchMaker.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -18,6 +20,24 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+
+    //MAIN USER
+    Person mainUser=Person();
+
+    //CREATING THE OTHER USERS
+    string maleCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/maleNames.csv";
+    string femaleCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/femaleNames.csv";
+    string lastnamesCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/lastnames.csv";
+    string majorCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/majors.csv";
+    string likesCSV ="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/likes.csv";
+
+    ProfileCreator creator = ProfileCreator(maleCSV, femaleCSV, lastnamesCSV, majorCSV,likesCSV);
+    vector<Person> dummies=creator.createDummies();
+    MatchMaker matchMake=MatchMaker(dummies);
+    //MatchMaker matchList=MatchMaker(mainUser,dummies);
+    //Descomentar este y comentar el de arriba cuando este lista la funcion full de matchmaker
+
+    //tambien hay que descomentar la linea 192 en "widget.cpp"
 
 signals:
 //STACKED WIDGET
@@ -43,6 +63,9 @@ signals:
 
 
 //SWIPING PAGE
+    //CREAR NUEVA LISTA DE PERSONAS
+    void getNewList(vector<Person>);
+
     //CAMBIO DE ATRIBUTOS
     void changeImage(const QPixmap &);
     void changeName(const QString &);
@@ -52,6 +75,7 @@ signals:
     void changeDislikes(const QString &);
 
     //CAMBIO DE PERFIL
+    void nextProfile();
 
     //CAMBIO DE VISTA
 
@@ -73,21 +97,14 @@ public slots:
 
 //PROFILE PAGE
     void meetPeopleButton();
-    void profilePicLabel();
+
 
 
 //SWIPING PAGE
-    //CAMBIO DE ATRIBUTOS
-    void buttonHandler();
-    void nameSlot();
-    void ageSlot();
-    void majorSlot();
-    void likesSlot();
-    void dislikesSlot();
 
     //CAMBIO DE PERFIL
-    void reject();
-    void approve();
+    void pass();
+    void like();
 
     //CAMBIO DE VISTA
     void messagesButton();
@@ -95,6 +112,8 @@ public slots:
     void backButton();
 
 //MESSAGES PAGE
+
+
 
 private:
     Ui::Widget *ui;

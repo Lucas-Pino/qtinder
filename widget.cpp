@@ -46,9 +46,13 @@ Widget::Widget(QWidget *parent)
     connect(this, SIGNAL(ypDislikeSignal_3(QString)), ui->dislikeLabel_3, SLOT( setText(QString)));
 
 //SWIPING PAGE //////////////////////////////////////////////////////////////////
+    //
+    //connect(this,SIGNAL(getNewList(vector<Person>)),this,SLOT(swipingPage(vector<Person>)));
+
     //BOTONES LIKE NEXT
-    //connect(ui->yesButton, SIGNAL(pressed()), this, SLOT( buttonHandler()));
-    //connect(ui->pushButton_2, SIGNAL(pressed()), this, SLOT( nameSlot()));
+    connect(ui->yesButton, SIGNAL(pressed()), this, SLOT( like()));
+    connect(ui->noButton, SIGNAL(pressed()), this, SLOT( pass()));
+    connect(this,SIGNAL(nextProfile()),this,SLOT(meetPeopleButton()));
     //connect(this, SIGNAL(changeImage(QPixmap)), ui->label_6, SLOT(setPixmap(QPixmap)));
     //connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
 
@@ -61,10 +65,19 @@ Widget::Widget(QWidget *parent)
 
 }
 
+//Initializations
+//Person mainPerson=Person();
+/*
+    string maleCSV=":/csv/csv/maleNames.csv";
+    string femaleCSV=":/csv/csv/femaleNames.csv";
+    string lastnamesCSV=":/csv/csv/lastnames.csv";
+    string majorCSV=":/csv/csv/majors.csv";
+    string likesCSV =":/csv/csv/likes.csv";
 
-Person mainPerson=Person("lucas","male",20,"ELO");
 
+    ProfileCreator creator = ProfileCreator(maleCSV, femaleCSV, lastnamesCSV, majorCSV,likesCSV);
 
+*/
 
 
 //LANDING PAGE /////////////////////////////////////////////////////////////////
@@ -104,14 +117,14 @@ void Widget::finishProfileButton(){
     //QString majorPref= ui->majorPrefBox->currentText();
 
     //likes
-    string likes[]={
+    vector<string> likes={
         ui->likeBox_1->text().toStdString(),
         ui->likeBox_2->text().toStdString(),
         ui->likeBox_3->text().toStdString()
     };
 
     //dislikes
-    string dislikes[]={
+    vector<string> dislikes={
         ui->dislikeBox_1->text().toStdString(),
         ui->dislikeBox_2->text().toStdString(),
         ui->dislikeBox_3->text().toStdString()
@@ -126,14 +139,14 @@ void Widget::finishProfileButton(){
     QString dislike3 = ui->dislikeBox_3->text();
 
     //setting on the person
-    mainPerson.setName(name.toStdString());
-    mainPerson.setAge(age);
-    mainPerson.setMajor(major.toStdString());
-    mainPerson.setGender(gender.toStdString());
-    mainPerson.setSexPref(sexPref.toStdString());
-    mainPerson.setAgePref(agePref);
-    mainPerson.setLikes(likes);
-    mainPerson.setDislikes(dislikes);
+    mainUser.setName(name.toStdString());
+    mainUser.setAge(age);
+    mainUser.setMajor(major.toStdString());
+    mainUser.setGender(gender.toStdString());
+    mainUser.setSexPref(sexPref.toStdString());
+    mainUser.setAgePref(agePref);
+    mainUser.setLikes(likes);
+    mainUser.setDislikes(dislikes);
 
     emit changeView(int(2));
 
@@ -176,16 +189,57 @@ void Widget::finishProfileButton(){
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
         ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/44.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
+
+    //crear la lista de posibles denuevo
+    //matchMake=MatchMaker(mainUser,dummies);
+
 }
+
 
 // PROFILE PAGE  /////////////////////////////////////////////////////////////////
 
 void Widget::meetPeopleButton(){
-    emit changeView(int(3));
-}
 
-void Widget::profilePicLabel(){
-    //:/yourProfile/profilePics/44.jpg
+    Person currentProfile=matchMake.GetNextPerson();
+    ui->nameSwipeLabel->setText(QString::fromStdString(currentProfile.getName()));
+    ui->ageSwipeLabel->setText(QString::number(currentProfile.getAge()));
+    ui->majorSwipeLabel->setText(QString::fromStdString(currentProfile.getMajor()));
+
+    //likes & dislikes
+    string comma=",";
+    string andy="&";
+    vector<string> likes = currentProfile.getLikes();
+    string strLikes=likes[0]+comma+likes[1]+comma+likes[2];
+    ui->likesSwipeLabel->setText(QString::fromStdString(strLikes));
+
+    vector<string> dislikes = currentProfile.getDisLikes();
+    string strdisLikes=dislikes[0]+comma+dislikes[1]+comma+dislikes[2];
+    ui->dislikesSwipeLabel->setText(QString::fromStdString(strdisLikes));
+
+    //profile pic
+    int w = ui->profilePicLabel->width();
+    string basePath=":/female/profilePics/";
+    string extension=".jpg";
+    string gender=currentProfile.getGender();
+    string id=to_string(currentProfile.getId());
+    string fullPath;
+
+    if (gender=="Masculino"){
+        basePath=":/male/profilePics/";
+    }
+    if (gender=="Femenino"){
+        basePath=":/female/profilePics/";
+    }
+    if (gender=="No Binario"){
+        basePath=":/nb/profilePics/";
+    }
+    fullPath=basePath+id+extension;
+
+    QPixmap pic=QPixmap(QString::fromStdString(fullPath));
+    ui->profilePicLabel->setPixmap(pic.scaled(w,w,Qt::KeepAspectRatio));
+
+    emit changeView(int(3));
+
 }
 
 
@@ -193,42 +247,19 @@ void Widget::profilePicLabel(){
 
 
 //SWIPING PAGE /////////////////////////////////////////////////////////////////
-//CAMBIO DE ATRIBUTOS
-void Widget::buttonHandler(){
-    emit changeImage(QPixmap(":/female/profilePics/44.jpg"));
-}
 
-void Widget::nameSlot(){
-    //std::string str="Dani,";
-    std::string str=mainPerson.getName();
-    const QString qstr = QString::fromStdString(str);
-    emit changeName(QString(qstr));
-}
-
-void Widget::ageSlot(){
-    emit changeAge(QString("23"));
-}
-
-void Widget::majorSlot(){
-    emit changeMajor(QString("Civil"));
-}
-
-void Widget::likesSlot(){
-    emit changeLikes(QString("Puppies,Pan & friends."));
-}
-
-void Widget::dislikesSlot(){
-    emit changeDislikes(QString("Mayo, winter, blue."));
-}
 
 
 //CAMBIO DE PERFIL NEXT
-void Widget::reject(){
+void Widget::pass(){
+    matchMake.Pass();
+    emit nextProfile();
 
 }
 
-void Widget::approve(){
-
+void Widget::like(){
+    matchMake.Like();
+    emit nextProfile();
 }
 
 //CAMBIO DE VISTA

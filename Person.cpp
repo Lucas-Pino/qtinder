@@ -7,27 +7,39 @@
 //CONSTRUCTORS
 int Person::PersonCounter=0;
 
-Person::Person(): Name(), Gender(), Age(), Id(), Major(), SexPreference(), AgePreference(), Likes(), Dislikes(), ApprovedList(), RejectedList(){
-}
-
-Person::Person(string name, string gender, int age, string major) {
+//Person::Person(): Name(), Gender(), Age(), Id(), Major(), SexPreference(), AgePreference(), Likes(), Dislikes(), ApprovedList(), RejectedList(){
+//}
+Person::Person(){
     PersonCounter++;
-    Id=PersonCounter;
-    Name = name;
-    Gender = gender;
-    Age = age;
-    Major = major;
+    this->Id=PersonCounter;
+    this->Name = "noname";
+    this->Lastname = "nolastname";
+    this->Gender = "nogender";
+    this->Age = 0;
+    this->Major = "civil";
+}
+Person::Person(string name, string lastname, string gender, int age, string major) {
+    PersonCounter++;
+    this->Id=PersonCounter;
+    this->Name = name;
+    this->Lastname = lastname;
+    this->Gender = gender;
+    this->Age = age;
+    this->Major = major;
 }
 
 //DESTRUCTOR
-Person::~Person() {
+//Person::~Person() {
 
-}
-
+//}
 
 //GETTERS
 string Person::getName(){
     return Name;
+}
+
+string Person::getLastName(){
+    return Lastname;
 }
 
 string Person::getGender() {
@@ -54,27 +66,33 @@ int* Person::getAgePref() {
     return AgePreference;
 }
 
-string* Person::getLikes() {
+vector<string> Person::getLikes() {
     return Likes;
 }
 
-string* Person::getDislikes() {
+vector<string> Person::getDisLikes() {
     return Dislikes;
 }
 
-vector<int> Person::getApprovedList() {
+vector<Person> Person::getApprovedList() {
     return ApprovedList;
 }
 
-vector<int> Person::getRejectedList() {
+vector<Person> Person::getRejectedList() {
     return RejectedList;
 }
 
-
+void Person::toString(){        //needs fixing: name not printing properly via cout
+    cout <<"Name: "<<getName()<<", Lastname:  "<<getLastName()<< ", Age: "<<getAge()<<", Major: "<<getMajor()<<endl;
+}
 
 //SETTERS
 void Person::setName(string name) {
     Name=name;
+}
+
+void Person::setLastName(string lastname){
+    Lastname=lastname;
 }
 
 void Person::setGender(string gender) {
@@ -99,29 +117,27 @@ void Person::setAgePref(int agePref[2]) {
 
 }
 
-void Person::setLikes(string likes[5]) {
-    //Likes[0]=likes[0];
-    int arrLen=sizeof(Likes)/sizeof(Likes[0]);
-    for(int i=0;i<arrLen;i++){
-        Likes[i]=likes[i];
+void Person::setLikes(vector<string> likes) {
+
+    for(int i=0;i<likes.size();i++){
+        Likes.push_back(likes[i]);
     };
 }
 
-void Person::setDislikes(string dislikes[5]) {
-    //Dislikes[0]=dislikes[0];
-    int arrLen=sizeof(Dislikes)/sizeof(Dislikes[0]);
-    for(int i=0;i<arrLen;i++){
-        Dislikes[i]=dislikes[i];
+void Person::setDislikes(vector<string> dislikes) {
+
+    for(int i=0;i<dislikes.size();i++){
+        Dislikes.push_back(dislikes[i]);
     };
 }
 
 //METHODS
 
-void Person::approve(int liked) {
+void Person::approve(Person liked) {
     ApprovedList.push_back(liked);
 }
 
-void Person::reject(int disliked) {
+void Person::reject(Person disliked) {
     RejectedList.push_back(disliked);
 }
 

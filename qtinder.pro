@@ -9,12 +9,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    MatchMaker.cpp \
     Person.cpp \
+    ProfileCreator.cpp \
     main.cpp \
     widget.cpp
 
 HEADERS += \
+    MatchMaker.h \
     Person.h \
+    ProfileCreator.h \
     widget.h
 
 FORMS += \
@@ -27,4 +31,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     logos.qrc \
-    profilePics.qrc
+    profilePics.qrc \
+    seeds.qrc

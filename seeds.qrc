@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/csv">
+        <file>csv/likes.csv</file>
+        <file>csv/programming_languages.csv</file>
+        <file>csv/dislikes.csv</file>
+        <file>csv/maleNames.csv</file>
+        <file>csv/majors.csv</file>
+        <file>csv/lastnames.csv</file>
+        <file>csv/femaleNames.csv</file>
+    </qresource>
+</RCC>
