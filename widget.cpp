@@ -46,13 +46,12 @@ Widget::Widget(QWidget *parent)
     connect(this, SIGNAL(ypDislikeSignal_3(QString)), ui->dislikeLabel_3, SLOT( setText(QString)));
 
 //SWIPING PAGE //////////////////////////////////////////////////////////////////
-    //
-    //connect(this,SIGNAL(getNewList(vector<Person>)),this,SLOT(swipingPage(vector<Person>)));
+
+    connect(this,SIGNAL(nextProfile()),this,SLOT(meetPeopleButton()));
 
     //BOTONES LIKE NEXT
     connect(ui->yesButton, SIGNAL(pressed()), this, SLOT( like()));
     connect(ui->noButton, SIGNAL(pressed()), this, SLOT( pass()));
-    connect(this,SIGNAL(nextProfile()),this,SLOT(meetPeopleButton()));
     //connect(this, SIGNAL(changeImage(QPixmap)), ui->label_6, SLOT(setPixmap(QPixmap)));
     //connect(this, SIGNAL(changeName(QString)), ui->label, SLOT(setText(QString)));
 
@@ -116,27 +115,32 @@ void Widget::finishProfileButton(){
 
     //QString majorPref= ui->majorPrefBox->currentText();
 
+
+
+    QString like1 = ui->likeBox_1->currentText();
+    QString like2 = ui->likeBox_2->currentText();
+    QString like3 = ui->likeBox_3->currentText();
+
+    QString dislike1 = ui->dislikeBox_1->currentText();
+    QString dislike2 = ui->dislikeBox_2->currentText();
+    QString dislike3 = ui->dislikeBox_3->currentText();
+
     //likes
+
     vector<string> likes={
-        ui->likeBox_1->text().toStdString(),
-        ui->likeBox_2->text().toStdString(),
-        ui->likeBox_3->text().toStdString()
+        like1.toStdString(),
+        like2.toStdString(),
+        like3.toStdString()
     };
 
     //dislikes
     vector<string> dislikes={
-        ui->dislikeBox_1->text().toStdString(),
-        ui->dislikeBox_2->text().toStdString(),
-        ui->dislikeBox_3->text().toStdString()
+        dislike1.toStdString(),
+        dislike2.toStdString(),
+        dislike3.toStdString()
     };
 
-    QString like1 = ui->likeBox_1->text();
-    QString like2 = ui->likeBox_2->text();
-    QString like3 = ui->likeBox_3->text();
 
-    QString dislike1 = ui->dislikeBox_1->text();
-    QString dislike2 = ui->dislikeBox_2->text();
-    QString dislike3 = ui->dislikeBox_3->text();
 
     //setting on the person
     mainUser.setName(name.toStdString());
@@ -187,7 +191,7 @@ void Widget::finishProfileButton(){
     else if(QString::compare(gender,QString("No Binario"))==0){
         emit ypGenderSignal(QString("⚧"));
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/male/18.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap(":/male/profilePics/male/18.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     //crear la lista de posibles denuevo
@@ -205,6 +209,7 @@ void Widget::meetPeopleButton(){
     ui->ageSwipeLabel->setText(QString::number(currentProfile.getAge()));
     ui->majorSwipeLabel->setText(QString::fromStdString(currentProfile.getMajor()));
 
+
     //likes & dislikes
     string comma=",";
     string andy="&";
@@ -219,26 +224,30 @@ void Widget::meetPeopleButton(){
 
     //profile pic
     int w = ui->profilePicLabel->width();
-    string basePath=":/female/profilePics/female";
+    string basePath=":/female/profilePics/female/";
     string extension=".jpg";
     string gender=currentProfile.getGender();
-    //string id=to_string(currentProfile.getId());
-    string id =to_string(8);
+    string id=to_string(currentProfile.getId());
+    //string id =to_string(8);
     string fullPath;
 
     if (gender=="Masculino"){
-        basePath=":/male/profilePics/male";
+        basePath=":/male/profilePics/male/";
+        ui->genderSwipeLabel->setText(QString("♂︎"));
     }
     if (gender=="Femenino"){
-        basePath=":/female/profilePics/female";
+        basePath=":/female/profilePics/female/";
+        ui->genderSwipeLabel->setText(QString("♀"));
     }
     if (gender=="No Binario"){
-        basePath=":/nb/profilePics/nb";
+        basePath=":/nb/profilePics/nb/";
+        ui->genderSwipeLabel->setText(QString("⚧"));
     }
     fullPath=basePath+id+extension;
+    QString qfullPath=QString::fromStdString(fullPath);
 
-    QPixmap pic=QPixmap(QString::fromStdString(fullPath));
-    ui->profilePicLabel->setPixmap(pic.scaled(w,w,Qt::KeepAspectRatio));
+    //QPixmap pic=QPixmap(QString::fromStdString(fullPath));
+    ui->profilePicLabel->setPixmap(QPixmap(qfullPath).scaled(w,w,Qt::KeepAspectRatio));
 
     emit changeView(int(3));
 

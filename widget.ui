@@ -551,84 +551,6 @@ border-radius: 1000px;
        <string>Edad</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="likeBox_1">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>130</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Puppies</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="likeBox_2">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>130</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Friends</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="likeBox_3">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>130</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Coffee</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="dislikeBox_3">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>200</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cats</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="dislikeBox_1">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>200</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>OOP</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="dislikeBox_2">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>200</y>
-        <width>101</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Java</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_51">
       <property name="geometry">
        <rect>
@@ -664,6 +586,966 @@ border-radius: 1000px;
       <property name="text">
        <string>Cosas que NO  te gustan</string>
       </property>
+     </widget>
+     <widget class="QComboBox" name="likeBox_1">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>130</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="likeBox_2">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>130</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="likeBox_3">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>130</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="dislikeBox_3">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>200</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="dislikeBox_1">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>200</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="dislikeBox_2">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>200</y>
+        <width>103</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acampar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aeroyoga</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Basketball</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Burgers</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>C++</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Cocinar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Comer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dulces</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Fashion</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Futbol</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Golf</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ir a la Playa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Java</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de mesa</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Juegos de video</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Leer</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Meditar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Musica</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Netflix</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OOP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Peliculas</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pintar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pizza</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Running</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Series de TV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Skydiving</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sushi</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tennis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viajar</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Yoga</string>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QFrame" name="basic_info">
@@ -1561,6 +2443,21 @@ border-radius: 1000px;
         </property>
         <property name="text">
          <string>hello</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="genderSwipeLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>30</pointsize>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>23</string>
         </property>
        </widget>
       </item>

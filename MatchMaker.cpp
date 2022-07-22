@@ -56,7 +56,7 @@ Person MatchMaker::GetNextPerson() {
 
 
 void MatchMaker::Pass() {
-    Liked.push_back(Queued);
+    Passed.push_back(Queued);
     Suggestions.pop_back();
 }
 

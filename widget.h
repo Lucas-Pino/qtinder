@@ -37,7 +37,7 @@ public:
     //MatchMaker matchList=MatchMaker(mainUser,dummies);
     //Descomentar este y comentar el de arriba cuando este lista la funcion full de matchmaker
 
-    //tambien hay que descomentar la linea 192 en "widget.cpp"
+    //tambien hay que descomentar la linea 194 en "widget.cpp"
 
 signals:
 //STACKED WIDGET
