@@ -152,21 +152,29 @@ void Widget::finishProfileButton(){
     emit ypDislikeSignal_3(dislike3);
 
 
+    // get label dimensions
+    int w = ui->mainProfilePic->width();
+
 
     //gender icon logic and profile pic
     if( QString::compare(gender,QString("Masculino"))==0){
         emit ypGenderSignal(QString("♂︎"));
-        emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
+        //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
+        //emit ypPicSignal(p.scaled(w,h,Qt::KeepAspectRatio));
+        //emit ypPicSignal(p.scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/44.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("Femenino"))==0){
         emit ypGenderSignal(QString("♀"));
-        emit ypPicSignal(QPixmap(":/yourProfileFemale/profilePics/67.jpg"));
+        //emit ypPicSignal(QPixmap(":/yourProfileFemale/profilePics/67.jpg"));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfileFemale/profilePics/67.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("No Binario"))==0){
         emit ypGenderSignal(QString("⚧"));
-        emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
+        //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
+        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/44.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 }
 
