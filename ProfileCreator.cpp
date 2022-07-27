@@ -61,26 +61,7 @@ ProfileCreator::ProfileCreator(string maleCSV, string femaleCSV, string lastname
     }
     majors.close();
 
-    Genders={"Masculino","Femenino","No Binario"};
-/*
-    cout << "se tomaron " << MaleNames.size()<<" nombres m"<< endl;
-    for(int i=0; i<MaleNames.size(); i++){
-        cout<< MaleNames[i]<< endl;
-    }
-    cout<<endl;
-    cout << "se tomaron " << FemaleNames.size()<<" nombres f "<< endl;
-    for(int i=0; i<FemaleNames.size();i++){
-        cout<<FemaleNames[i]<< endl;
-    }
-    cout<< endl;
-    cout << "se tomaron " << LastNames.size()<<" apellidos"<< endl;
- 
-    for(int i=0; i<LastNames.size();i++){
-        cout<<LastNames[i]<< endl;
-    }
-    cout<< endl;
-  */  
-    
+    Genders={"Masculino","Femenino","No Binario"}; 
 }
 
 vector<Person> ProfileCreator::createDummies()
@@ -118,22 +99,30 @@ vector<Person> ProfileCreator::createDummies()
         std::uniform_int_distribution<> distr4(MIN_AGE, MAX_AGE); // range for age
         age = distr4(gen);
 
-        std::uniform_int_distribution<> distr5(0, Majors.size()); // range for majors
+        std::uniform_int_distribution<> distr5(0, Majors.size()-1); // range for majors
         major = Majors[distr5(gen)];
 
-        std::uniform_int_distribution<> distr8(0, Genders.size()); // range for majors
+        std::uniform_int_distribution<> distr8(0, Genders.size()-1); // range for majors
         gender = Genders[distr8(gen)];
 
         //adding likes and dislikes
-        for(int ii=0;ii<3;ii++){
-            std::uniform_int_distribution<> distr6(0, Likes.size()); // range for majors
+        for(int ii=0;ii< 3;ii++){
+            std::uniform_int_distribution<> distr6(0, Likes.size()-1); // for likes
             like.push_back(Likes[distr6(gen)]);
-
-            std::uniform_int_distribution<> distr7(0, Likes.size()); // range for majors
-            dislike.push_back(Likes[distr7(gen)]);
-
-
         }
+        for(int jj=0;jj< 3;jj++){
+            std::uniform_int_distribution<> distr7(0, Likes.size()-1); // for dislikes
+            if(Likes[distr7(gen)] == like[0] || Likes[distr7(gen)] == like[1] || Likes[distr7(gen)] == like[2]){
+                std::uniform_int_distribution<> distr7(0, Likes.size()-1);
+                dislike.push_back(Likes[distr7(gen)]);
+                //cout<<Likes[distr7(gen)]<<endl;
+            }
+            else{
+                dislike.push_back(Likes[distr7(gen)]);
+                //cout<<Likes[distr7(gen)]<<endl;
+            }
+        }
+
 
 
 
@@ -142,34 +131,6 @@ vector<Person> ProfileCreator::createDummies()
         dummy.setLikes(like);
         dummy.setDislikes(dislike);
         DummyProfiles.push_back(dummy);
-/*
-        cout << dummy.getName()<< endl;
-        cout << dummy.getLastName()<< endl;
-        cout << dummy.getAge()<< endl;
-        cout << dummy.getMajor()<< endl;
-        cout << endl;
-        //cout<<"toString de la función; "<<endl;
-        //dummy.toString();
-*/
-
-/*
-        //debugging
-        cout<< "name is -> " << name << endl;
-        cout<< "lastname is -> " <<lastname << endl;
-        cout<< "NOMBRE COMPLETO ES ->"<< name << lastname << endl;
-        cout<< "age is -> " << age << endl;
-        cout<< "major is -> "<< major << endl;
-        cout << endl;
-        cout<<"EN EL PERFIL SE TIENE" << endl;
-        dummy.toString();
-
-        string a = "hello";
-        string b = "WORLD";
-        string c = a+ " " +b;
-        Person dummy2 = Person(c, gender, age, major);
-        DummyProfiles.push_back(dummy2);
-        cout << "Name dummy2: " << dummy2.getName() <<  endl;
-*/
     }
     return DummyProfiles;
 }

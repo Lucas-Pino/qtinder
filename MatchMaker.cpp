@@ -5,22 +5,14 @@ MatchMaker::MatchMaker(){}
 
 MatchMaker::MatchMaker(Person user, vector<Person> profiles)
 {
-    string like1 = user.getLikes()[0];
-    string like2 = user.getLikes()[1];
-    string like3 = user.getLikes()[2];
-
-    //dislikes
-
-    vector<int>shares1;  //guarda las id de los perfiles que hacen comparten el Like
-    vector<int>shares2;
-    vector<int>shares3;
-
     int index = 0;
 
     for(Person dummy: profiles){
-        if(user.getSexPref() == dummy.getGender()){     // quitamos quienes no tienen nada en común
+        if(user.getSexPref() == dummy.getGender()){     // filtro por genero
+            cout<< "genero preferido-> "<<user.getSexPref()<<endl;
+            cout<< "genero dummy-> "<<dummy.getGender()<<endl;
             if(user.getDisLikes()[0] == dummy.getLikes()[0] || user.getDisLikes()[1] == dummy.getLikes()[1] || user.getDisLikes()[2] == dummy.getLikes()[2]){
-                profiles.erase(profiles.begin() + index);
+                profiles.erase(profiles.begin() + index);       //filtro por hobbies
 
             }
             index++;
@@ -32,10 +24,6 @@ MatchMaker::MatchMaker(Person user, vector<Person> profiles)
             index++;
         }
     }
-
-//    for(Person dummy: profiles){         //evalua el grado de compatibilidad según intereses en común
-//        Suggestions.push_back(dummy);
-//    }
 }
 
 

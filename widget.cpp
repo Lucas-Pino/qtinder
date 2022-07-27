@@ -179,23 +179,23 @@ void Widget::finishProfileButton(){
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
         //emit ypPicSignal(p.scaled(w,h,Qt::KeepAspectRatio));
         //emit ypPicSignal(p.scaled(w,w,Qt::KeepAspectRatio));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfile_Male/profilePics/male/16.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap("/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/male/16.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("Femenino"))==0){
         emit ypGenderSignal(QString("♀"));
         //emit ypPicSignal(QPixmap(":/yourProfileFemale/profilePics/67.jpg"));
-        ui->mainProfilePic->setPixmap(QPixmap(":/yourProfileFemale/profilePics/female/1.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap("/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/female/1.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     else if(QString::compare(gender,QString("No Binario"))==0){
         emit ypGenderSignal(QString("⚧"));
         //emit ypPicSignal(QPixmap(":/yourProfile_Male/profilePics/44.jpg"));
-        ui->mainProfilePic->setPixmap(QPixmap(":/male/profilePics/male/18.jpg").scaled(w,w,Qt::KeepAspectRatio));
+        ui->mainProfilePic->setPixmap(QPixmap("/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/male/18.jpg").scaled(w,w,Qt::KeepAspectRatio));
     }
 
     //crear la lista de posibles denuevo
-    //matchMake=MatchMaker(mainUser,dummies);
+    //MatchMaker matchMake=MatchMaker(mainUser,dummies);
 
 }
 
@@ -204,7 +204,8 @@ void Widget::finishProfileButton(){
 
 void Widget::meetPeopleButton(){
 
-    Person currentProfile=matchMake.GetNextPerson();
+    //MatchMaker matchMake=MatchMaker(mainUser,dummies);
+    Person currentProfile = matchMake.GetNextPerson();
     ui->nameSwipeLabel->setText(QString::fromStdString(currentProfile.getName()));
     ui->ageSwipeLabel->setText(QString::number(currentProfile.getAge()));
     ui->majorSwipeLabel->setText(QString::fromStdString(currentProfile.getMajor()));
@@ -224,7 +225,7 @@ void Widget::meetPeopleButton(){
 
     //profile pic
     int w = ui->profilePicLabel->width();
-    string basePath=":/female/profilePics/female/";
+    string basePath="/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/male/";
     string extension=".jpg";
     string gender=currentProfile.getGender();
     string id=to_string(currentProfile.getId());
@@ -232,15 +233,15 @@ void Widget::meetPeopleButton(){
     string fullPath;
 
     if (gender=="Masculino"){
-        basePath=":/male/profilePics/male/";
+        basePath="/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/male/";
         ui->genderSwipeLabel->setText(QString("♂︎"));
     }
     if (gender=="Femenino"){
-        basePath=":/female/profilePics/female/";
+        basePath="/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/female/";
         ui->genderSwipeLabel->setText(QString("♀"));
     }
     if (gender=="No Binario"){
-        basePath=":/nb/profilePics/nb/";
+        basePath="/Users/ale/Desktop/Ramos/elo329/qtinder/profilePics/nb/";
         ui->genderSwipeLabel->setText(QString("⚧"));
     }
     fullPath=basePath+id+extension;

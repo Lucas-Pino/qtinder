@@ -25,11 +25,11 @@ public:
     Person mainUser=Person();
 
     //CREATING THE OTHER USERS
-    string maleCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/maleNames.csv";
-    string femaleCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/femaleNames.csv";
-    string lastnamesCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/lastnames.csv";
-    string majorCSV="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/majors.csv";
-    string likesCSV ="/Users/lucas/School/Programacion Orientada A Objetos/Proyectos/qtinder/qtinder/csv/likes.csv";
+    string maleCSV="/Users/ale/Desktop/Ramos/elo329/qtinder/csv/maleNames.csv";
+    string femaleCSV="/Users/ale/Desktop/Ramos/elo329/qtinder/csv/femaleNames.csv";
+    string lastnamesCSV="/Users/ale/Desktop/Ramos/elo329/qtinder/csv/lastnames.csv";
+    string majorCSV="/Users/ale/Desktop/Ramos/elo329/qtinder/csv/majors.csv";
+    string likesCSV ="/Users/ale/Desktop/Ramos/elo329/qtinder/csv/likes.csv";
 
     ProfileCreator creator = ProfileCreator(maleCSV, femaleCSV, lastnamesCSV, majorCSV,likesCSV);
     vector<Person> dummies=creator.createDummies();

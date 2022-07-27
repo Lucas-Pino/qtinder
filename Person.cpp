@@ -119,14 +119,14 @@ void Person::setAgePref(int agePref[2]) {
 
 void Person::setLikes(vector<string> likes) {
 
-    for(int i=0;i<likes.size();i++){
+    for(int i=0;i<int(likes.size());i++){                   //hice cast
         Likes.push_back(likes[i]);
     };
 }
 
 void Person::setDislikes(vector<string> dislikes) {
 
-    for(int i=0;i<dislikes.size();i++){
+    for(int i=0;i<int(dislikes.size());i++){
         Dislikes.push_back(dislikes[i]);
     };
 }
@@ -141,7 +141,7 @@ void Person::reject(Person disliked) {
     RejectedList.push_back(disliked);
 }
 
-int Person::matchLevel(Person person2) {
+/*int Person::matchLevel(Person person2) {
     //ENTREGA EL NIVEL DE MATCH QUE TIENEN LAS PERSONAS
     int level=0;
     //LEVEL 1
@@ -164,5 +164,5 @@ int Person::matchLevel(Person person2) {
         };
     };
     return level;
-}
+}*/
 
