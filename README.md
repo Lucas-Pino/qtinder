@@ -8,4 +8,5 @@ Es necesario cambiar el path de los archivos con los nombres, apellidos, carrera
 de este proyecto por la ubicación local en su máquina. Específicamente en las líneas:
 
 28-32:                                  widget.h
+
 182, 188, 194, 228, 236, 244:           widget.cpp
